@@ -17,6 +17,8 @@ public class EmailService {
     public void enviarEmailContato(ContatoRequest request) {
         SimpleMailMessage message = new SimpleMailMessage();
 
+        // OBRIGATÓRIO PARA O BREVO: O remetente (precisa ser o e-mail da sua conta lá)
+        message.setFrom("matheus.rubim0408@gmail.com");
 
         message.setTo("contatorubimze@gmail.com");
         message.setSubject("Novo Contato do Portfólio: " + request.nome());
@@ -32,4 +34,3 @@ public class EmailService {
         mailSender.send(message);
     }
 }
-
